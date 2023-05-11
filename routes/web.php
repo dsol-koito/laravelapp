@@ -13,10 +13,14 @@ use App\Http\Controllers\HelloController;
 |
 */
 // Route::get('hello', 'HelloController@index');
+// ↑↑↑↑↑　laravel7までの記述方法
 
 // Route::get('hello', [ HelloController::class, 'index'] );
+// Route::get('hello/{id?}/{pass?}', [ HelloController::class, 'index'] );
 
-Route::get('hello/{id?}/{pass?}', [ HelloController::class, 'index'] );
+Route::get('hello', [ HelloController::class, 'index'] );
+Route::get('hello/other', [ HelloController::class, 'other'] );
+
 
 /*
 Route::get('hello', function(){
