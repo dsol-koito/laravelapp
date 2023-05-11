@@ -21,6 +21,9 @@ use App\Http\Controllers\HelloController;
 Route::get('hello', [ HelloController::class, 'index'] );
 // Route::get('hello/other', [ HelloController::class, 'other'] );
 
+Route::get('hello', function(){
+    return view('hello.Index');
+});
 
 /*
 Route::get('hello', function(){
