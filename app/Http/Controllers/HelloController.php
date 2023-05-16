@@ -10,14 +10,20 @@ use Illuminate\Http\Response;
 class HelloController extends Controller
 {
 
-    public function index(Request $request){
+    public function index(){
         
-        $data = ['msg'=>'これはコントローラから渡されたメッセージです。',
-        'id' => $request->id
+        $data = ['msg'=>'これはBladeを利用したサンプルです。',
+        //'id' => $request->id
         //'id' => $id
         ];
         return view('hello.index', $data);
         //return view('hello.index');
+    }
+
+    public function post(Request $request){
+        $msg = $request->msg;
+        $data = ['msg'=>'こんにちは、' . $msg . 'さん！',];
+        return view('hello.index', $data);
     }
     /*
     public function index(Request $request, Response $response){
