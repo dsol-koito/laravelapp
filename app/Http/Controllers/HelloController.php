@@ -9,6 +9,17 @@ use Illuminate\Http\Response;
 
 class HelloController extends Controller
 {
+
+    public function index(Request $request){
+        
+        $data = ['msg'=>'これはコントローラから渡されたメッセージです。',
+        'id' => $request->id
+        //'id' => $id
+        ];
+        return view('hello.index', $data);
+        //return view('hello.index');
+    }
+    /*
     public function index(Request $request, Response $response){
 
         $html = <<< EOF
@@ -33,9 +44,7 @@ class HelloController extends Controller
 
         $response->setContent($html);
         return $response;
-       
-
     }
-
+*/
 
 }
