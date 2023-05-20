@@ -16,8 +16,8 @@ class HelloController extends Controller
         //'id' => $request->id
         //'id' => $id
         //];
-        return view('hello.index', ['msg'=>'']);
-        //return view('hello.index');
+        //return view('hello.index', ['msg'=>'']);
+        return view('hello.index');
     }
 
     public function post(Request $request){
