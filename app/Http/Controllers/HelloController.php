@@ -12,18 +12,18 @@ class HelloController extends Controller
 
     public function index(){
         
-        $data = ['msg'=>'これはBladeを利用したサンプルです。',
+        //$data = ['msg'=>'',
         //'id' => $request->id
         //'id' => $id
-        ];
-        return view('hello.index', $data);
+        //];
+        return view('hello.index', ['msg'=>'']);
         //return view('hello.index');
     }
 
     public function post(Request $request){
-        $msg = $request->msg;
-        $data = ['msg'=>'こんにちは、' . $msg . 'さん！',];
-        return view('hello.index', $data);
+        //$msg = $request->msg;
+        //$data = ['msg'=>  $msg,];
+        return view('hello.index', ['msg'=>  $request->msg]);
     }
     /*
     public function index(Request $request, Response $response){
